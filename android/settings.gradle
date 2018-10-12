@@ -1,0 +1,3 @@
+rootProject.name = 'St_Thmomas_Novena_Mlayalam'
+
+include ':app'
