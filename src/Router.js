@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import { Router, Scene, Actions,Drawer } from "react-native-router-flux";
 import { StyleSheet } from "react-native";
-
-import Home from "./Home";
-import ImageGallerySelection from "./ImageGallerySelection";
-import TripDetailsUpload from "./TripDetailsUpload";
-import AddTravalourBuddy from "./AddTravalourBuddy";
-import PlaceTagFlatList from "./PlaceTagFlatList";
 import About from './components/About';
-import Drawer from './components/Drawer';
+import DrawerMenu from './components/DrawerMenu';
 import ContentScreen from './components/ContentScreen'
 const RouterComponent = () => {
   return (
@@ -67,6 +61,12 @@ const RouterComponent = () => {
         key="finalSong2"
           component={ContentScreen}
           title="സമാപനഗാനം-2"
+          titleStyle={styles.navigationBarTitleStyle} 
+        />
+        <Scene
+        key="about"
+          component={AboutScreen}
+          title="About"
           titleStyle={styles.navigationBarTitleStyle} 
         />
         </Drawer>
