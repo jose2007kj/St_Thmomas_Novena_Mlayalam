@@ -7,7 +7,7 @@ class ContentScreen extends Component {
 
     componentDidMount() {
         this.props.fetchContentInit();
-        this.props.fetchContentRemote(this.props.item);
+        this.props.fetchContentRemote(this.props.page);
     }
 
 
@@ -18,7 +18,7 @@ class ContentScreen extends Component {
                 <Text 
                     style={styles.contentTextStyle}
                 >
-                    {this.props.content}
+                    {this.props.item}
                 </Text>
             </ScrollView>
         );
@@ -39,7 +39,7 @@ const styles = {
 
 const mapStateToProps = state => {
     return {
-        content: state.home.content,
+        item: state.content.item,
         page: state.navigation.page
     };
 };

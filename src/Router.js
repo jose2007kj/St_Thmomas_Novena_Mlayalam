@@ -3,7 +3,8 @@ import { Router, Scene, Actions,Drawer } from "react-native-router-flux";
 import { StyleSheet } from "react-native";
 import About from './components/About';
 import DrawerMenu from './components/DrawerMenu';
-import ContentScreen from './components/ContentScreen'
+import ContentScreen from './components/ContentScreen';
+import MenuIcon from './res/icons/icon_menu.png';
 const RouterComponent = () => {
   return (
     <Router>
@@ -65,7 +66,7 @@ const RouterComponent = () => {
         />
         <Scene
         key="about"
-          component={AboutScreen}
+          component={About}
           title="About"
           titleStyle={styles.navigationBarTitleStyle} 
         />

@@ -3,7 +3,7 @@ import {ImageBackground,View,StatusBar,StyleSheet,Dimensions} from 'react-native
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware,compose} from 'redux';
 import ReduxThunk from 'redux-thunk';
-import RouterComponent from './router';
+import RouterComponent from './Router';
 import reducers from './reducers';
 class App extends Component {
   componentWillMount () {

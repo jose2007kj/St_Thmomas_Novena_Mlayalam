@@ -7,8 +7,8 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    menu: 'Intro',
-    page: ''
+    menu: 'intro',
+    page: 'intro'
 };
 
 export default (state = INITIAL_STATE, action) => {
