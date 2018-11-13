@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,Image,Dimensions,Text } from 'react-native';
+import { View,Image,Dimensions,Text,ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { navigateToScreen } from '../actions';
 import { Menu } from './common';
@@ -20,6 +20,7 @@ class DrawerMenu extends Component {
 
           
             <View style={styles.items}>
+            <ScrollView>
                 <Menu 
                 title="അവതാരിക" 
                 
@@ -64,7 +65,7 @@ class DrawerMenu extends Component {
                 title="About" 
                 
                 onPress={() => this.props.navigateToScreen('About')} 
-                />
+                /></ScrollView>
             </View></View>
             
         
@@ -107,7 +108,7 @@ const styles = {
         marginTop: 6
     },
     items:{
-        marginTop:220
+        marginTop:150
     }
 };
 const mapStateToProps = (state) => {

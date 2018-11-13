@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import { Router, Scene, Actions,Drawer } from "react-native-router-flux";
-import { StyleSheet } from "react-native";
+import { StyleSheet,BackHandler } from "react-native";
 import About from './components/About';
 import DrawerMenu from './components/DrawerMenu';
 import ContentScreen from './components/ContentScreen';
 import MenuIcon from './res/icons/icon_menu.png';
 const RouterComponent = () => {
+  onBackPressed = () => {
+    if (Actions.currentScene ==="intro") {
+      BackHandler.exitApp();
+      return false;
+    }
+    
+};
   return (
-    <Router>
-      <Scene key="root">
+    <Router
+    backAndroidHandler={this.onBackPressed}
+    >
+      <Scene key="root" hideNavBar>
       <Drawer
         key="drawer"
         contentComponent={DrawerMenu}

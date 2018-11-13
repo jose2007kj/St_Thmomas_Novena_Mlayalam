@@ -31,12 +31,12 @@ const Menu = ({ onPress, title }) => {
 const styles = {
     menuStyle: {
          borderColor:'#0091EA', margin:5, borderWidth:3,
-        padding: 10,
+        padding: 8,
         paddingLeft: 35,
         flexDirection: 'row'
     },
     menuTextStyle: {
-        fontSize: 20,
+        fontSize: 16,
         color: '#f9f7f7',
         marginLeft: 30
     },
