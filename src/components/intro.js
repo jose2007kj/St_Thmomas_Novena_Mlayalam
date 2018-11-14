@@ -5,17 +5,16 @@ import { fetchContentInit, fetchContentRemote } from '../actions';
 import * as style from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 
-class ContentScreen extends Component {
+class IntroScreen extends Component {
 
     componentDidMount() {
         this.props.fetchContentInit();
-        this.props.fetchContentRemote(this.props.page);
+        this.props.fetchContentRemote('intro');
     }
 
 
     render() {
-        console.log(this.props.from);
-
+       
         return (
             <View style={styles.container}>
                 
@@ -59,4 +58,4 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
     fetchContentInit,
     fetchContentRemote
-})(ContentScreen);
+})(IntroScreen);

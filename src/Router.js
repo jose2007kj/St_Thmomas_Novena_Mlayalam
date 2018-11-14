@@ -1,21 +1,25 @@
 import React, { Component } from "react";
-import { Router, Scene, Actions,Drawer } from "react-native-router-flux";
+import { Router, Scene, Actions,ActionConst,Drawer } from "react-native-router-flux";
 import { StyleSheet,BackHandler } from "react-native";
 import About from './components/About';
 import DrawerMenu from './components/DrawerMenu';
 import ContentScreen from './components/ContentScreen';
+import IntroScreen from './components/intro';
 import MenuIcon from './res/icons/icon_menu.png';
 const RouterComponent = () => {
   onBackPressed = () => {
     if (Actions.currentScene ==="intro") {
+      console.log('insideintro scene onrefresh')
       BackHandler.exitApp();
       return false;
     }
-    
+   
 };
   return (
     <Router
     backAndroidHandler={this.onBackPressed}
+    titleStyle={{color:'#F0FFFF'}}
+navigationBarStyle={{ backgroundColor: '#C2185B' }}
     >
       <Scene key="root" hideNavBar>
       <Drawer
@@ -25,8 +29,9 @@ const RouterComponent = () => {
         >
         <Scene
           key="intro"
-          component={ContentScreen}
+          component={IntroScreen}
           title="അവതാരിക"
+          
           titleStyle={styles.navigationBarTitleStyle}
           initial
         />
@@ -41,49 +46,52 @@ const RouterComponent = () => {
         key="introSong2"
           component={ContentScreen}
           title="പ്രാരംഭഗാനം-2"
-          titleStyle={styles.navigationBarTitleStyle} 
+          titleStyle={styles.navigationBarTitleStyle}
+          
         />
         <Scene
         key="praiseSongs"
           component={ContentScreen}
           title="സതൂതികീ൪ത്തനങ്ങൾ"
           titleStyle={styles.navigationBarTitleStyle} 
+          
         />
         <Scene
         key="thanksGiving"
           component={ContentScreen}
           title="കൃതജ്ഞത"
           titleStyle={styles.navigationBarTitleStyle} 
+          
         />
         <Scene
         key="lastBlessing"
           component={ContentScreen}
           title="സമാപനാശീ൪വാദം"
-          titleStyle={styles.navigationBarTitleStyle} 
+          titleStyle={styles.navigationBarTitleStyle}
+          
         />
         <Scene
         key="finalSong1"
           component={ContentScreen}
           title="സമാപനഗാനം-1"
           titleStyle={styles.navigationBarTitleStyle} 
+          
         />
          <Scene
         key="finalSong2"
           component={ContentScreen}
           title="സമാപനഗാനം-2"
-          titleStyle={styles.navigationBarTitleStyle} 
+          titleStyle={styles.navigationBarTitleStyle}
+          
         />
         <Scene
         key="about"
           component={About}
-          title="About"
-          titleStyle={styles.navigationBarTitleStyle} 
+          title="Guide,About Us"
+          titleStyle={styles.navigationBarTitleStyle}
+          
         />
-        </Drawer>
-
-        
-
-       
+        </Drawer> 
       </Scene>
     </Router>
   );

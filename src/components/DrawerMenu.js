@@ -3,7 +3,7 @@ import { View,Image,Dimensions,Text,ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { navigateToScreen } from '../actions';
 import { Menu } from './common';
-// import LinearGradient from 'react-native-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import * as style from './styles';
 
 class DrawerMenu extends Component {
@@ -13,18 +13,21 @@ class DrawerMenu extends Component {
         return (
             <View style={styles.container}> 
             <Image 
-          source={require('../res/nav_header.jpg')}
+          source={require('../res/saint_thomas.jpg')}
           style={styles.backgroundImage}
-          resizeMode='cover'
-          />
-
           
-            <View style={styles.items}>
+          resizeMode='cover'
+/>
+            <LinearGradient
+                colors={['#EC407A', '#E91E63', '#D81B60', '#C2185B', '#AD1457', '#880E4F']}
+                start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 1.0}}
+                style={style.gradient}
+></LinearGradient><View style={styles.items}>
             <ScrollView>
                 <Menu 
                 title="അവതാരിക" 
                 
-                onPress={() => this.props.navigateToScreen('Content','intro')} 
+                onPress={() => this.props.navigateToScreen('Intro')} 
                 />
                 <Menu 
                 title="പ്രാരംഭഗാനം-1" 
@@ -65,8 +68,9 @@ class DrawerMenu extends Component {
                 title="About" 
                 
                 onPress={() => this.props.navigateToScreen('About')} 
-                /></ScrollView>
-            </View></View>
+                /></ScrollView></View>
+            {/* </View> */}
+            </View>
             
         
         );
@@ -75,37 +79,15 @@ class DrawerMenu extends Component {
 const styles = {
     container: {
         flex: 1,
-        backgroundColor: 'white',
-       
-    },
-    backgroundImage: {
+        paddingTop: 50,
+        paddingLeft: 20,
+        backgroundColor: '#5ecae7'
+  },backgroundImage: {
         flex: 1,
         position: 'absolute',
         top: 0,
         height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
-    },
-    headerView: {
-        height: 210,
-        backgroundColor: '#b3181c',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    logoView: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'absolute'
-    },
-    logoImage: {
-        height: 50,
-        width: 50,
-       
-    },
-    logoText: {
-        color: 'white',
-        fontSize: 16,
-        fontFamily: 'KaushanScript-Regular',
-        marginTop: 6
     },
     items:{
         marginTop:150

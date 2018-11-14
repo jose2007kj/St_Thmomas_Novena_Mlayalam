@@ -5,3 +5,4 @@ export const NAVIGATE_TO_ABOUT = 'navigate_to_about_screen';
 export const FETCH_ERROR = 'feching from json failed';
 export const FETCH_START = 'fetching starts';
 export const CONTENT_FETCHED = 'contens fetched';
+export const NAVIGATE_TO_INTRO='navigate t intro';

@@ -7,7 +7,7 @@ import RouterComponent from './Router';
 import reducers from './reducers';
 class App extends Component {
   componentWillMount () {
-    StatusBar.setBackgroundColor('#6D4C41');
+    StatusBar.setBackgroundColor('#AD1457');
 }
   render() {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));

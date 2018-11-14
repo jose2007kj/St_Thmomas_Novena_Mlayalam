@@ -11,4 +11,11 @@ module.exports = StyleSheet.create({
         opacity:0.8,
         position: "absolute"
     },
+    backgroundImage: {
+        flex: 1,
+        position: 'absolute',
+        top: 0,
+        height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width
+    }
 });

@@ -2,7 +2,7 @@ import {
     NAV_MENU_CLICKED,
     NAVIGATE_TO_CONTENT,
     SET_TITLE,
-    NAVIGATE_TO_ABOUT
+    NAVIGATE_TO_ABOUT,NAVIGATE_TO_INTRO
 } from './types';
 
 export const navigationMenuClicked = (menu) => {
@@ -22,6 +22,10 @@ export const navigateToScreen = (screen, item) => {
         case 'About':
             return {
                 type: NAVIGATE_TO_ABOUT
+            };
+        case 'Intro':
+            return {
+                type: NAVIGATE_TO_INTRO
             };
         default:
             return 0;
